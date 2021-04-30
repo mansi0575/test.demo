@@ -1,0 +1,206 @@
+1)Print a sample welcome message to greet the user
+puts "Welcome to Ruby Programming"
+
+2)Get the user name at run time and greet them
+
+puts 'enter your name'
+name = gets
+name = name.chomp
+puts ' hello ' + name + ' ,Welcome to Ruby Programming '
+
+3)Working with numbers – Create two variables (float) perform multiplication and display the output
+
+a = 5.5
+b = 5.5
+c= a*b
+puts c
+
+4)Local variables and global variables
+	a.Create two variables one is local variable and another is global variable( starts with $)
+_name = "mansi"
+$surname = "mhatre"
+
+	b.Create two methods and resign the local variables and print local variable and global variable from both the methods
+def name
+  _name = "mansi"
+  puts _name
+end
+def surname
+  $surname = "mhatre"
+  puts $surname
+end
+name 
+surname
+
+5)Working with classes
+	a.Create a class called person
+	b.Declare the setter and getter method for the name attribute
+	c.Declare a method full_name to return first_name + last_name
+
+class Person
+  
+  def setname(name)  #setter method
+    @p_name=name
+  end
+
+  def getname  #getter method
+    @p_name 
+  end
+end
+
+first_name = Person.new
+first_name.setname("Harry")
+last_name = Person.new
+last_name.setname(" Potter")
+full_name = first_name.getname + last_name.getname
+puts "My name is #{full_name}." 
+
+6)Working with classes and constructors
+	a.Use the same person class as above
+	b.When creating a new object, instantiate with both first name and last name(Hint: use initialize)
+
+class Person
+  
+  def initialize(name)
+    @name = name
+  end
+
+  def name  #getter method
+    @name
+  end
+
+  def name=(name)   #setter method
+    @name = name
+  end
+end
+
+first_name = Person.new('harry')
+last_name = Person.new(' potter')
+full_name = first_name.name + last_name.name
+puts "My name is #{full_name}." 
+
+7)Classes and inheritance
+	a.Create class called Circle and inherit it from the Shape class by creating shape class
+	b.Create a method disp_msg in Shape class and just print “from shape class”
+	c.Create a method disp_msg in Circle class
+	d.Now inside the disp_msg from Circle class you need to print two messages “from shape class” and “from Circle Class”. Hint Use Super
+
+class Shape
+
+  def disp_msg
+    puts "From shape class"
+  end
+end
+
+class Circle < Shape
+  
+  def disp_msg
+    puts "From circle class"
+  end
+end
+
+shape = Shape.new()
+shape.disp_msg
+circle = Circle.new()
+circle.disp_msg
+
+8)Working with strings
+	a.Create a string “Ruby Programming”
+	b.Print out the total length of the string
+	c.Split the string one character each
+	d.Print the value of string of the 4th element
+	e.Append “is awesome!” to the existing string
+	f.Print all the letters starting from the 3rd position
+
+phrase = "Ruby Programming"
+puts phrase.length()
+puts phrase.chars
+puts phrase[3]
+puts phrase << " is awesome!" 
+puts phrase.length()
+puts phrase[3,28]
+
+9)Working with ranges
+	a.Create a range of numbers between 1 and 10
+	b.Create a range of alphabets from ‘z’ to ‘a’
+	c.After creating number ranges print the value of each item multiplied by 2 if it is even number and if it is odd subtract 2 and print the entire results
+
+array1 = (1..10).to_a
+puts array1
+array2 = ('a'..'z').reverse_each
+puts array2.to_a
+x = (1..10).to_a
+y=x.map{|n|n*2 if n.even?}
+z=x.map{|n|n-2 if n.odd?}
+puts y + z
+
+10)Working with arrays
+	a.Create an array with fruit names
+	b.Print the fruit name at position 3
+	c.Print each item from array
+	d.Append  “is yellow” if the fruit name is mango
+	e.Delete 3 item from the array and print the new array
+	f.Sorting an array in ascending order
+	g.Assign nill value to the array and remove that nil value from array
+	h.Create array inside an array and remove the array inside the outer array example
+		i.[a, b, [c, d], e] and I want the output like [a, b, c, d, e]
+
+fruits =Array ["apple", "mango", "orange", "kiwi"]
+puts fruits[2]                   #print elememt at 3 position
+puts fruits
+                                     #append 
+x= fruits.delete_at(2)                      #delete 3 element
+puts x
+puts fruits
+_sort=fruits.sort{|left,right| left <=> right}     # f.	Sorting an array in ascending order
+puts _sort         
+fruits[3] = nil
+puts fruits.compact                              #Assign nill value to the array and remove that nil value from array
+alp = ["a", "b", ["c", "d"], "e"]
+puts alp.flatten
+
+11)Working with hashes
+	a.Create a hash with some values
+	b.Print the length of the hash
+	c.Sort the hash ascending order
+	d.Print the keys of hash
+	e.Print the values of the hash
+
+
+week = {
+  1 => "monday",
+  2 => "tuesday",
+  3 => "wednesday",
+  4 => "thursday",
+  5 => "friday",
+  6 => "saturday",
+  7 => "sunday"
+}
+puts week
+puts week.length
+puts week.sort_by {|k, v| v}
+puts week.keys
+puts week.values
+
+
+12)Loops
+	a.Write a loop to print “Ruby is awesome” 5 times
+	b.Same as above, but you need to add the iteration to the result “Ruby is awesome 1” so on.
+	c.Create a loop so that it prints the values in descending order 10, 9 , 8 7 and so on Hint use downTo
+
+phrase = "Ruby is awesome"
+
+5.times { |i| puts phrase}
+5.times { |i| puts "Ruby is awesome #{i}" }
+6.downto(1) {|i| puts "Ruby is awesome #{i}" }
+
+
+
+
+
+
+
+
+
+
+
