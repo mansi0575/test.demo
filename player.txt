@@ -1,0 +1,32 @@
+class Player
+  attr_accessor :name
+  def initialize(name)
+    @name = name
+  end
+
+   def add_run(run)
+    @run = run
+   end
+
+   def total_score
+    add_scored(@i).sum.to_i
+  end
+
+  #def boundaries()
+    
+  #end
+
+  #def details
+    
+  #end
+
+end
+
+player1 = Player.new("Dhoni")
+player2 = Player.new("Sachin")
+puts player1.add_run(4)
+ puts player1.add_run(6)
+ puts player1.add_run(1)
+ puts player2.add_run(6)
+ puts player2.add_run(1)
+
